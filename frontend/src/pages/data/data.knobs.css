@@ -1,0 +1,99 @@
+/* data.knobs.css — 页面布局与密度统一在这里调整 */
+[data-page='race-data'] {
+  /* Page */
+  --page-max-width: 1800px; /* 主内容最大宽；建议 1440–1840px */
+  --page-gutter: clamp(18px, 2.5vw, 40px); /* 页面左右留白；建议 16–48px */
+  --section-gap: 16px; /* 筛选区与结果区距离；建议 12–28px */
+  --page-min-height: 100svh; /* 最小页面高度 */
+
+  /* Header */
+  --header-pad-block: clamp(16px, 2vw, 28px); /* 页头上下留白；建议 16–40px，压低以腾出表格行 */
+  --header-brand-gap: 14px; /* 标志与标题距离；建议 12–24px */
+  --brand-mark-size: 46px; /* 品牌标志尺寸；建议 44–60px */
+  --title-size: clamp(1.85rem, 2.2vw, 2.4rem); /* 页面标题字号 */
+
+  /* Filter */
+  --filter-sticky-top: 0px; /* 筛选条吸顶偏移 */
+  --filter-z-index: 20; /* 筛选条层级 */
+  --filter-bar-pad: 14px; /* 筛选容器内边距；建议 12–20px */
+  --filter-gap: 12px; /* 筛选控件间距；建议 10–18px */
+  --filter-heading-width: 154px; /* 筛选标题栏宽度；建议 132–180px */
+  --filter-date-width: 168px; /* 日期控件宽度；建议 156–190px */
+  --filter-horse-width: minmax(230px, 1fr); /* 马名控件弹性宽度 */
+  --filter-venue-width: 140px; /* 场地控件宽度；建议 136–180px */
+  --filter-toggle-width: 168px; /* 聚合开关宽度；建议 150–190px */
+  --control-height: 42px; /* 输入与按钮高度；建议 38–46px */
+  --control-radius: 5px; /* 控件圆角；建议 3–8px */
+  --switch-track-width: 36px; /* 开关轨道宽度 */
+  --switch-track-height: 22px; /* 开关轨道高度 */
+
+  /* Results */
+  --results-heading-pad-block: 6px 10px; /* 结果标题上下间距 */
+  --table-visible-rows: 15; /* 目标一次可见数据行数；建议 12–20 */
+  --table-chrome-reserve: 210px; /* 页头+筛选+标题+页脚预留；建议 190–260px */
+  --table-header-row-primary: 38px; /* 一级表头高度 */
+  --table-header-row-group: 30px; /* 二级表头高度 */
+  --table-header-row-leaf: 34px; /* 三级表头高度 */
+  --table-group-header-height: 34px; /* 场次分组行高度；建议 30–40px */
+  --table-row-height: 40px; /* 数据行高度；紧凑 36–40 / 舒适 48–52 */
+  /* 至少容纳 15 行；同时尽量吃满视口剩余高度 */
+  --table-header-height: calc(
+    var(--table-header-row-primary) + var(--table-header-row-group) +
+      var(--table-header-row-leaf)
+  );
+  --table-min-height: calc(
+    var(--table-header-height) + (var(--table-visible-rows) * var(--table-row-height))
+  );
+  --table-max-height: max(
+    var(--table-min-height),
+    calc(100svh - var(--table-chrome-reserve))
+  );
+  --table-min-width: 1680px; /* 完整多级表头所需宽度 */
+  --table-cell-pad-x: 10px; /* 单元格水平留白；建议 8–14px */
+  --table-font-size: 0.8rem; /* 表格字号；建议 0.78–0.9rem */
+  --table-header-font-size: 0.7rem; /* 表头字号 */
+  --sticky-column-shadow-width: 10px; /* sticky 列阴影宽度 */
+
+  /* Footer */
+  --footer-pad-block: 14px; /* 页脚上下留白 */
+
+  /* Motion */
+  --motion-fast: 150ms; /* hover / focus 过渡 */
+  --motion-medium: 260ms; /* 内容出现与选中态过渡 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1100px) {
+  [data-page='race-data'] {
+    --page-gutter: 18px;
+    --filter-heading-width: 100%;
+    --filter-horse-width: minmax(220px, 1fr);
+    --table-chrome-reserve: 280px;
+    --table-visible-rows: 12;
+  }
+}
+
+@media (max-width: 720px) {
+  [data-page='race-data'] {
+    --page-gutter: 14px;
+    --section-gap: 14px;
+    --header-pad-block: 18px;
+    --brand-mark-size: 44px;
+    --title-size: 1.75rem;
+    --filter-bar-pad: 12px;
+    --filter-date-width: 1fr;
+    --filter-horse-width: 1fr;
+    --filter-venue-width: 1fr;
+    --control-height: 44px;
+    --table-chrome-reserve: 0px;
+    --table-max-height: none;
+    --table-visible-rows: 10;
+    --table-row-height: 44px;
+    --footer-pad-block: 14px;
+  }
+}
+
+/*
+  Tweak log
+  - 表格可视行：5–6 → ≥15（--table-visible-rows / --table-chrome-reserve / 行高压缩）
+*/

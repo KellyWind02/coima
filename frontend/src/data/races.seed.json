@@ -1,0 +1,887 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-09",
+  "note": "前端设计原型模拟数据（30 条），可在接入真实 API 时整文件替换。",
+  "venues": [
+    {
+      "code": "ST",
+      "name": "沙田"
+    },
+    {
+      "code": "HV",
+      "name": "跑马地"
+    }
+  ],
+  "entries": [
+    {
+      "id": "2025-03-15-ST-07-08",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 8,
+      "horseName": "时代英雄",
+      "jockey": "何泽尧",
+      "trainer": "姚本辉",
+      "weight": 120,
+      "barrier": 3,
+      "odds": {
+        "win": {
+          "pre": 9.8,
+          "final": 8.9
+        },
+        "place": {
+          "pre": 3.1,
+          "final": 2.8
+        },
+        "quinella": {
+          "pre": 17.6,
+          "final": 15.9
+        }
+      },
+      "recentForm": "6-3-5-2-4",
+      "finishPosition": 5
+    },
+    {
+      "id": "2025-03-15-ST-07-07",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 7,
+      "horseName": "海港之光",
+      "jockey": "艾道拿",
+      "trainer": "丁冠豪",
+      "weight": 122,
+      "barrier": 6,
+      "odds": {
+        "win": {
+          "pre": 7.4,
+          "final": 6.9
+        },
+        "place": {
+          "pre": 2.4,
+          "final": 2.3
+        },
+        "quinella": {
+          "pre": 15.2,
+          "final": 14.0
+        }
+      },
+      "recentForm": "3-5-2-4-1",
+      "finishPosition": 3
+    },
+    {
+      "id": "2025-03-15-ST-07-06",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 6,
+      "horseName": "疾风勇士",
+      "jockey": "霍宏声",
+      "trainer": "苏伟贤",
+      "weight": 119,
+      "barrier": 11,
+      "odds": {
+        "win": {
+          "pre": 28.0,
+          "final": 33.0
+        },
+        "place": {
+          "pre": 7.2,
+          "final": 8.0
+        },
+        "quinella": {
+          "pre": null,
+          "final": 48.0
+        }
+      },
+      "recentForm": null,
+      "finishPosition": 9
+    },
+    {
+      "id": "2025-03-15-ST-07-05",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 5,
+      "horseName": "烈焰先锋",
+      "jockey": "艾兆礼",
+      "trainer": "沈集成",
+      "weight": 123,
+      "barrier": 9,
+      "odds": {
+        "win": {
+          "pre": 16.0,
+          "final": 18.0
+        },
+        "place": {
+          "pre": 4.4,
+          "final": 4.9
+        },
+        "quinella": {
+          "pre": 29.0,
+          "final": 33.0
+        }
+      },
+      "recentForm": "7-5-8-6-4",
+      "finishPosition": 8
+    },
+    {
+      "id": "2025-03-15-ST-07-04",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 4,
+      "horseName": "云端骏影",
+      "jockey": "周俊乐",
+      "trainer": "文家良",
+      "weight": 126,
+      "barrier": 8,
+      "odds": {
+        "win": {
+          "pre": 14.0,
+          "final": 15.0
+        },
+        "place": {
+          "pre": 3.9,
+          "final": 4.1
+        },
+        "quinella": {
+          "pre": 26.0,
+          "final": 28.0
+        }
+      },
+      "recentForm": "6-5-4-7-3",
+      "finishPosition": 6
+    },
+    {
+      "id": "2025-03-15-ST-07-03",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 3,
+      "horseName": "银月飞影",
+      "jockey": "布文",
+      "trainer": "伍鹏志",
+      "weight": 129,
+      "barrier": 7,
+      "odds": {
+        "win": {
+          "pre": 11.0,
+          "final": 10.0
+        },
+        "place": {
+          "pre": 3.3,
+          "final": 3.0
+        },
+        "quinella": {
+          "pre": 22.0,
+          "final": 19.5
+        }
+      },
+      "recentForm": "4-2-6-3-5",
+      "finishPosition": 4
+    },
+    {
+      "id": "2025-03-15-ST-07-02",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 2,
+      "horseName": "骏马风采",
+      "jockey": "田泰安",
+      "trainer": "告东尼",
+      "weight": 131,
+      "barrier": 2,
+      "odds": {
+        "win": {
+          "pre": 4.6,
+          "final": 4.3
+        },
+        "place": {
+          "pre": 1.8,
+          "final": 1.7
+        },
+        "quinella": {
+          "pre": 9.6,
+          "final": 8.9
+        }
+      },
+      "recentForm": "2-3-1-4-2",
+      "finishPosition": 1
+    },
+    {
+      "id": "2025-03-15-ST-07-01",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 7,
+      "horseNo": 1,
+      "horseName": "东方荣耀",
+      "jockey": "潘顿",
+      "trainer": "吕健威",
+      "weight": 135,
+      "barrier": 5,
+      "odds": {
+        "win": {
+          "pre": 2.9,
+          "final": 3.1
+        },
+        "place": {
+          "pre": 1.4,
+          "final": 1.4
+        },
+        "quinella": {
+          "pre": 6.2,
+          "final": 6.8
+        }
+      },
+      "recentForm": "1-2-1-1-3",
+      "finishPosition": 2
+    },
+    {
+      "id": "2025-03-15-ST-03-08",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 8,
+      "horseName": "烈焰先锋",
+      "jockey": "艾道拿",
+      "trainer": "丁冠豪",
+      "weight": 115,
+      "barrier": 12,
+      "odds": {
+        "win": {
+          "pre": 26.0,
+          "final": 31.0
+        },
+        "place": {
+          "pre": 6.8,
+          "final": 7.5
+        },
+        "quinella": {
+          "pre": null,
+          "final": null
+        }
+      },
+      "recentForm": "9-8-7-9-6",
+      "finishPosition": 10
+    },
+    {
+      "id": "2025-03-15-ST-03-07",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 7,
+      "horseName": "银月飞影",
+      "jockey": "布文",
+      "trainer": "伍鹏志",
+      "weight": 116,
+      "barrier": 9,
+      "odds": {
+        "win": {
+          "pre": 13.0,
+          "final": 12.0
+        },
+        "place": {
+          "pre": 3.7,
+          "final": 3.5
+        },
+        "quinella": {
+          "pre": 25.0,
+          "final": 22.0
+        }
+      },
+      "recentForm": "5-4-3-6-2",
+      "finishPosition": 6
+    },
+    {
+      "id": "2025-03-15-ST-03-06",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 6,
+      "horseName": "赤兔精神",
+      "jockey": "希威森",
+      "trainer": "罗富全",
+      "weight": 118,
+      "barrier": 1,
+      "odds": {
+        "win": {
+          "pre": 18.0,
+          "final": 21.0
+        },
+        "place": {
+          "pre": 4.9,
+          "final": 5.7
+        },
+        "quinella": {
+          "pre": 34.0,
+          "final": 39.5
+        }
+      },
+      "recentForm": null,
+      "finishPosition": 9
+    },
+    {
+      "id": "2025-03-15-ST-03-05",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 5,
+      "horseName": "劲速传奇",
+      "jockey": "艾兆礼",
+      "trainer": "沈集成",
+      "weight": 121,
+      "barrier": 6,
+      "odds": {
+        "win": {
+          "pre": 6.2,
+          "final": 5.5
+        },
+        "place": {
+          "pre": 2.2,
+          "final": 1.9
+        },
+        "quinella": {
+          "pre": 11.8,
+          "final": 10.2
+        }
+      },
+      "recentForm": "1-7-4-3-3",
+      "finishPosition": 3
+    },
+    {
+      "id": "2025-03-15-ST-03-04",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 4,
+      "horseName": "南区之星",
+      "jockey": "巴度",
+      "trainer": "方嘉柏",
+      "weight": 125,
+      "barrier": 11,
+      "odds": {
+        "win": {
+          "pre": 12.0,
+          "final": 14.0
+        },
+        "place": {
+          "pre": 3.6,
+          "final": 4.0
+        },
+        "quinella": {
+          "pre": 24.5,
+          "final": 27.8
+        }
+      },
+      "recentForm": "8-4-5-2-6",
+      "finishPosition": 7
+    },
+    {
+      "id": "2025-03-15-ST-03-03",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 3,
+      "horseName": "翠湖飞鹰",
+      "jockey": "梁家俊",
+      "trainer": "韦达",
+      "weight": 128,
+      "barrier": 2,
+      "odds": {
+        "win": {
+          "pre": 8.4,
+          "final": 7.6
+        },
+        "place": {
+          "pre": 2.7,
+          "final": 2.5
+        },
+        "quinella": {
+          "pre": 18.0,
+          "final": 16.4
+        }
+      },
+      "recentForm": "3-6-1-7-2",
+      "finishPosition": 2
+    },
+    {
+      "id": "2025-03-15-ST-03-02",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 2,
+      "horseName": "星光快车",
+      "jockey": "田泰安",
+      "trainer": "告东尼",
+      "weight": 132,
+      "barrier": 8,
+      "odds": {
+        "win": {
+          "pre": 5.7,
+          "final": 6.1
+        },
+        "place": {
+          "pre": 2.0,
+          "final": 2.1
+        },
+        "quinella": {
+          "pre": 12.2,
+          "final": 13.5
+        }
+      },
+      "recentForm": "5-2-2-4-1",
+      "finishPosition": 4
+    },
+    {
+      "id": "2025-03-15-ST-03-01",
+      "raceDate": "2025-03-15",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 3,
+      "horseNo": 1,
+      "horseName": "金钻贵人",
+      "jockey": "潘顿",
+      "trainer": "蔡约翰",
+      "weight": 135,
+      "barrier": 4,
+      "odds": {
+        "win": {
+          "pre": 3.8,
+          "final": 3.4
+        },
+        "place": {
+          "pre": 1.6,
+          "final": 1.5
+        },
+        "quinella": {
+          "pre": 8.7,
+          "final": 7.9
+        }
+      },
+      "recentForm": "2-1-3-1-4",
+      "finishPosition": 1
+    },
+    {
+      "id": "2025-03-08-HV-04-08",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 8,
+      "horseName": "疾风勇士",
+      "jockey": "希威森",
+      "trainer": "罗富全",
+      "weight": 116,
+      "barrier": 9,
+      "odds": {
+        "win": {
+          "pre": 22.0,
+          "final": 26.0
+        },
+        "place": {
+          "pre": 5.8,
+          "final": 6.6
+        },
+        "quinella": {
+          "pre": null,
+          "final": 41.0
+        }
+      },
+      "recentForm": "8-9-6-7-8",
+      "finishPosition": 7
+    },
+    {
+      "id": "2025-03-08-HV-04-07",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 7,
+      "horseName": "云端骏影",
+      "jockey": "何泽尧",
+      "trainer": "姚本辉",
+      "weight": 119,
+      "barrier": 5,
+      "odds": {
+        "win": {
+          "pre": 9.5,
+          "final": 8.6
+        },
+        "place": {
+          "pre": 2.9,
+          "final": 2.7
+        },
+        "quinella": {
+          "pre": 18.8,
+          "final": 17.2
+        }
+      },
+      "recentForm": "3-4-2-5-3",
+      "finishPosition": 3
+    },
+    {
+      "id": "2025-03-08-HV-04-06",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 6,
+      "horseName": "雷霆战驹",
+      "jockey": "霍宏声",
+      "trainer": "苏伟贤",
+      "weight": 118,
+      "barrier": 6,
+      "odds": {
+        "win": {
+          "pre": 24.0,
+          "final": 28.0
+        },
+        "place": {
+          "pre": 6.5,
+          "final": 7.2
+        },
+        "quinella": {
+          "pre": null,
+          "final": null
+        }
+      },
+      "recentForm": "9-10-7-8-5",
+      "finishPosition": null
+    },
+    {
+      "id": "2025-03-08-HV-04-05",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 5,
+      "horseName": "海港之光",
+      "jockey": "艾道拿",
+      "trainer": "丁冠豪",
+      "weight": 121,
+      "barrier": 4,
+      "odds": {
+        "win": {
+          "pre": 10.0,
+          "final": 9.1
+        },
+        "place": {
+          "pre": 3.0,
+          "final": 2.9
+        },
+        "quinella": {
+          "pre": 21.5,
+          "final": 19.8
+        }
+      },
+      "recentForm": "5-5-4-1-7",
+      "finishPosition": 4
+    },
+    {
+      "id": "2025-03-08-HV-04-04",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 4,
+      "horseName": "翡翠凤凰",
+      "jockey": "周俊乐",
+      "trainer": "文家良",
+      "weight": 124,
+      "barrier": 10,
+      "odds": {
+        "win": {
+          "pre": 15.0,
+          "final": 17.0
+        },
+        "place": {
+          "pre": 4.2,
+          "final": 4.7
+        },
+        "quinella": {
+          "pre": 31.0,
+          "final": 35.0
+        }
+      },
+      "recentForm": "7-8-3-6-2",
+      "finishPosition": 8
+    },
+    {
+      "id": "2025-03-08-HV-04-03",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 3,
+      "horseName": "金钻贵人",
+      "jockey": "潘顿",
+      "trainer": "蔡约翰",
+      "weight": 127,
+      "barrier": 1,
+      "odds": {
+        "win": {
+          "pre": 3.2,
+          "final": 2.8
+        },
+        "place": {
+          "pre": 1.5,
+          "final": 1.3
+        },
+        "quinella": {
+          "pre": 7.1,
+          "final": 6.5
+        }
+      },
+      "recentForm": "3-2-1-3-1",
+      "finishPosition": 2
+    },
+    {
+      "id": "2025-03-08-HV-04-02",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 2,
+      "horseName": "骏马风采",
+      "jockey": "布文",
+      "trainer": "伍鹏志",
+      "weight": 130,
+      "barrier": 7,
+      "odds": {
+        "win": {
+          "pre": 7.0,
+          "final": 7.8
+        },
+        "place": {
+          "pre": 2.4,
+          "final": 2.7
+        },
+        "quinella": {
+          "pre": 15.0,
+          "final": 16.9
+        }
+      },
+      "recentForm": "4-1-6-3-5",
+      "finishPosition": 6
+    },
+    {
+      "id": "2025-03-08-HV-04-01",
+      "raceDate": "2025-03-08",
+      "venue": "跑马地",
+      "venueCode": "HV",
+      "raceNo": 4,
+      "horseNo": 1,
+      "horseName": "星光快车",
+      "jockey": "田泰安",
+      "trainer": "告东尼",
+      "weight": 133,
+      "barrier": 2,
+      "odds": {
+        "win": {
+          "pre": 4.5,
+          "final": 4.2
+        },
+        "place": {
+          "pre": 1.8,
+          "final": 1.7
+        },
+        "quinella": {
+          "pre": 9.4,
+          "final": 8.8
+        }
+      },
+      "recentForm": "2-5-2-2-4",
+      "finishPosition": 1
+    },
+    {
+      "id": "2025-03-01-ST-02-06",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 6,
+      "horseName": "蓝海策略",
+      "jockey": "艾兆礼",
+      "trainer": "沈集成",
+      "weight": 118,
+      "barrier": 12,
+      "odds": {
+        "win": {
+          "pre": 31.0,
+          "final": 35.0
+        },
+        "place": {
+          "pre": 8.0,
+          "final": 9.2
+        },
+        "quinella": {
+          "pre": null,
+          "final": null
+        }
+      },
+      "recentForm": null,
+      "finishPosition": 11
+    },
+    {
+      "id": "2025-03-01-ST-02-05",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 5,
+      "horseName": "胜利节拍",
+      "jockey": "巴度",
+      "trainer": "方嘉柏",
+      "weight": 122,
+      "barrier": 2,
+      "odds": {
+        "win": {
+          "pre": 5.2,
+          "final": 4.8
+        },
+        "place": {
+          "pre": 1.9,
+          "final": 1.8
+        },
+        "quinella": {
+          "pre": 10.7,
+          "final": 9.9
+        }
+      },
+      "recentForm": "1-5-2-4-6",
+      "finishPosition": 2
+    },
+    {
+      "id": "2025-03-01-ST-02-04",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 4,
+      "horseName": "时代英雄",
+      "jockey": "何泽尧",
+      "trainer": "姚本辉",
+      "weight": 125,
+      "barrier": 7,
+      "odds": {
+        "win": {
+          "pre": 7.5,
+          "final": 8.2
+        },
+        "place": {
+          "pre": 2.5,
+          "final": 2.8
+        },
+        "quinella": {
+          "pre": 16.1,
+          "final": 17.6
+        }
+      },
+      "recentForm": "3-6-3-5-2",
+      "finishPosition": 5
+    },
+    {
+      "id": "2025-03-01-ST-02-03",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 3,
+      "horseName": "赤兔精神",
+      "jockey": "希威森",
+      "trainer": "罗富全",
+      "weight": 128,
+      "barrier": 5,
+      "odds": {
+        "win": {
+          "pre": 11.0,
+          "final": 12.0
+        },
+        "place": {
+          "pre": 3.4,
+          "final": 3.7
+        },
+        "quinella": {
+          "pre": 23.0,
+          "final": 25.4
+        }
+      },
+      "recentForm": "4-9-6-4-3",
+      "finishPosition": 7
+    },
+    {
+      "id": "2025-03-01-ST-02-02",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 2,
+      "horseName": "晨曦勇士",
+      "jockey": "布文",
+      "trainer": "伍鹏志",
+      "weight": 132,
+      "barrier": 3,
+      "odds": {
+        "win": {
+          "pre": 4.0,
+          "final": 3.7
+        },
+        "place": {
+          "pre": 1.7,
+          "final": 1.6
+        },
+        "quinella": {
+          "pre": 8.4,
+          "final": 7.8
+        }
+      },
+      "recentForm": "2-4-1-2-1",
+      "finishPosition": 1
+    },
+    {
+      "id": "2025-03-01-ST-02-01",
+      "raceDate": "2025-03-01",
+      "venue": "沙田",
+      "venueCode": "ST",
+      "raceNo": 2,
+      "horseNo": 1,
+      "horseName": "翠湖飞鹰",
+      "jockey": "梁家俊",
+      "trainer": "韦达",
+      "weight": 135,
+      "barrier": 9,
+      "odds": {
+        "win": {
+          "pre": 6.5,
+          "final": 6.0
+        },
+        "place": {
+          "pre": 2.2,
+          "final": 2.0
+        },
+        "quinella": {
+          "pre": 13.2,
+          "final": 12.1
+        }
+      },
+      "recentForm": "6-3-6-1-7",
+      "finishPosition": 3
+    }
+  ]
+}

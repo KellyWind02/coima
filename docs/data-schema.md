@@ -9,11 +9,11 @@
 
 | 阶段 | 存储 | 清理方式 |
 |------|------|----------|
-| MVP / 联调 | `backend/data/seed/races.seed.json` | 删除或覆盖该文件 + 重启/reload |
-| 过渡（可选） | SQLite，由 JSON 灌入 | `rm *.db` + 重新 seed |
+| 当前前端原型 | `frontend/src/data/races.seed.json`（由前端直接读取） | 删除或覆盖该文件 |
+| MVP API 联调（后续） | `backend/data/seed/races.seed.json` | 删除或覆盖该文件 + 重启/reload |
 | 正式 | PostgreSQL | `TRUNCATE` / 迁移脚本；JSON 不再作为运行时源 |
 
-**推荐 MVP 用 JSON**：数据量小（20–30 场）、会整体作废、希望「方便后续清理」。JSON 比过早引入 PG 更合适；API 与领域模型按表结构写好，迁库时只换 Repository。
+**当前仅实现前端原型**：不创建后端、不连接数据库，浏览器直接加载 JSON 种子。数据量小（20–30 场）、会整体作废，JSON 可直接替换且无迁移残留。后续接 FastAPI 与 PostgreSQL 时，保留前端类型与 API 契约，只替换数据读取层。
 
 ---
 
@@ -24,13 +24,13 @@ Race（赛事）1 ─── * Entry（参赛马，一行表格）
 Horse（马）可选归一化；MVP 可在 Entry 内嵌马名
 ```
 
-MVP 为减少复杂度，**种子文件以「扁平 Entry 列表」为主**，赛事字段冗余在每行；后续 ETL 可拆表。
+原型为减少复杂度，**种子文件以「扁平 Entry 列表」为主**，赛事字段冗余在每行；后续 ETL 可拆表。
 
 ---
 
 ## 3. Entry 行字段定义
 
-对外 API / 前端 TypeScript 建议使用 **camelCase**（待确认）。
+前端类型与未来对外 API 固定使用 **camelCase**。
 
 | 字段 | 类型 | 说明 | 可空 |
 |------|------|------|------|
@@ -45,20 +45,39 @@ MVP 为减少复杂度，**种子文件以「扁平 Entry 列表」为主**，�
 | `trainer` | string | 练马师 | 否 |
 | `weight` | number | 负磅（磅） | 否 |
 | `barrier` | number | 档位 | 否 |
-| `winOdds` | number \| null | 独赢 | 是 |
-| `placeOdds` | number \| null | 位置 | 是 |
-| `quinellaOdds` | number \| null | 连赢（MVP 单值） | 是 |
-| `oddsAsOf` | `"pre"` \| `"final"` \| null | 赔率时点，可选 | 是 |
+| `odds` | `OddsByBetType` | 赔率父级；按玩法与时点存放 | 是 |
 | `recentForm` | string \| null | 近 5 场，如 `"2-5-1-3-4"` | 是 |
-| `finishPosition` | number \| null | 名次（研究用，可选） | 是 |
+| `finishPosition` | number \| null | 名次；MVP 表格列，可空显示「—」 | 是 |
 
-扩展字段不要散落：后续在对象上增加属性，或使用 `extras: Record<string, unknown>`（慎用；优先显式字段）。
+### `odds` 的层级模型
+
+赔率不应以 `winOdds`、`placeOdds` 等平铺字段持续扩展。采用「**赔率 → 玩法 → 时点**」的对象结构：
+
+```ts
+type OddsMoment = {
+  pre?: number | null;   // 开跑前
+  final?: number | null; // 临场 / 最终
+};
+
+type OddsByBetType = {
+  win?: OddsMoment;      // 独赢
+  place?: OddsMoment;    // 位置
+  quinella?: OddsMoment; // 连赢
+  // 以后可显式增加：quinellaPlace、trio、firstFour ...
+};
+```
+
+这种结构同时解决「其他赔率也可能有开跑前 / 临场值」的需求；前端表头可呈现为两级：父级「赔率」，子级如「独赢·开跑前」「独赢·临场」「位置·开跑前」等。原型首版默认展示每种玩法的 `final`，可通过列配置开启 `pre`，避免首屏过宽。
+
+> 注意：真实的「连赢」是两匹马的组合市场，并非单匹马的天然属性。原型可先在当前行展示模拟值；接 PG 时，应将其迁到独立的 `marketOdds` 实体，并加入组合马号/马匹 ID。
+
+业务字段优先显式增加，不用无约束的 `extras` 承载长期数据。
 
 ---
 
 ## 4. 种子 JSON 结构（建议）
 
-文件：`backend/data/seed/races.seed.json`
+原型文件：`frontend/src/data/races.seed.json`（后续 API 联调时可移动至 `backend/data/seed/races.seed.json`）
 
 ```json
 {
@@ -82,10 +101,11 @@ MVP 为减少复杂度，**种子文件以「扁平 Entry 列表」为主**，�
       "trainer": "蔡约翰",
       "weight": 126,
       "barrier": 3,
-      "winOdds": 5.2,
-      "placeOdds": 1.9,
-      "quinellaOdds": null,
-      "oddsAsOf": "final",
+      "odds": {
+        "win": { "pre": 5.6, "final": 5.2 },
+        "place": { "pre": 2.0, "final": 1.9 },
+        "quinella": { "pre": null, "final": null }
+      },
       "recentForm": "1-3-2-5-4",
       "finishPosition": 2
     }
@@ -93,21 +113,20 @@ MVP 为减少复杂度，**种子文件以「扁平 Entry 列表」为主**，�
 }
 ```
 
-校验：`scripts/validate_seed.py` 检查 version、必填字段、venue 枚举、至少 3 日 / 2 场地 / 10 马名。
+原型校验可由 TypeScript 类型与轻量测试完成：检查 version、必填字段、venue 枚举、至少 3 日 / 2 场地 / 10 马名；后续再加入 `scripts/validate_seed.py`。
 
 ---
 
 ## 5. 清理与重置
 
 ```bash
-# 建议提供
-./backend/scripts/reset_data.sh
-# 行为：备份当前 seed（可选）→ 拷贝 fixtures/races.seed.default.json → 提示重启 API
+# 原型：替换或删除前端种子文件后，刷新浏览器即可
+cp frontend/src/data/races.seed.default.json frontend/src/data/races.seed.json
 ```
 
 约定：
 
-- **禁止**把不可再生的真实爬取数据只放在会被 reset 覆盖的路径而不备份。
+- **禁止**把不可再生的真实爬取数据只放在会被 reset 覆盖的种子路径而不备份。
 - 切 PG 前：导出最终 JSON → ETL → `TRUNCATE` 应用表 → 改 `Repository` 实现与连接串。
 - 仓库可加 `.gitignore`：`backend/data/local/`（本地实验库），种子默认文件可提交。
 
@@ -154,8 +173,8 @@ JSON 扁平行可通过 `race_id = f"{date}-{venueCode}-{raceNo:02d}"` 聚合写
 
 | 条件 | 语义 |
 |------|------|
-| `race_date` | 精确匹配当天 |
-| `horse_name` | 子串模糊（大小写不敏感；中文直接包含） |
+| `raceDate` | 精确匹配当天 |
+| `horseName` | 子串模糊（大小写不敏感；中文直接包含） |
 | `venue` | 精确匹配中文名，或缺省 = 全部 |
 | 组合 | AND |
 
@@ -163,9 +182,9 @@ JSON 扁平行可通过 `race_id = f"{date}-{venueCode}-{raceNo:02d}"` 聚合写
 
 ---
 
-## 8. 待你确认
+## 8. 已确认与后续决策
 
-1. 扁平 `entries[]` 是否接受（相对 races + nested runners）？  
-2. `quinellaOdds` 单字段 vs `quinellaOddsPre` / `quinellaOddsFinal`？  
-3. 是否需要 `finishPosition`（名次）进入 MVP 表格列？  
-4. 马名是否需要英文名 / 马匹代码字段（可后续再加）？
+- 前端原型使用扁平 `entries[]`、JSON 种子、camelCase；不接数据库。
+- 场地枚举固定为「沙田」「跑马地」。
+- 赔率使用父级 `odds` + 玩法/时点子级，不使用单一 `quinellaOdds`。
+- `finishPosition` 进入 MVP 表格列；英文名与马匹代码可后续再加。

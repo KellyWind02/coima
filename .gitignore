@@ -1,2 +1,5 @@
 # Local Cursor agent skills / rules — do not commit
 .cursor/
+
+# Local runtime state
+.runtime/

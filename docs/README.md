@@ -6,4 +6,4 @@
 | [data-schema.md](./data-schema.md) | 数据模型、JSON 样例、清理与迁移到 PostgreSQL |
 | [design-brief.md](./design-brief.md) | 前端页面设计 Brief（实现 UI 前确认） |
 
-**当前状态**：方案待确认，尚未开始编码。
+**当前状态**：方案已确认；下一步实现仅使用 JSON 种子的 React 前端原型，不接后端或数据库。
